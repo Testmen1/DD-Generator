@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="monStyle.css">
+  <meta charset="utf-8">
+  <title>caractéristiques</title>
+  <script type="text/javascript" src="mesFonctions.js"></script>
+</head>
+
+<body onload="resetForm()">
+  <div class="premier">
+    <h3>Informations basiques</h3><button onclick="allrandom()"> Tout aléatoire</button><br><br>
+    <form class="myForm">
+      <label for="NomPersonnage">Nom du personnage</label><br>
+      <input type="text" name="NomPersonnage" required><br><br>
+
+      <label for="NomJoueur">Nom du joueur</label><br>
+      <input type="text" name="NomJoueur"><br><br>
+
+    </form>
+    <button onclick="sexerandom()">Aléatoire</button><br>
+    <form class="myForm">
+      <label for="Sexe">Sexe</label>
+      <select name="Sexe" id="sexe">
+        <option value="Homme">Homme</option>
+        <option value="Femme">Femme</option>
+      </select><br><br>
+
+    </form>
+    <button onclick="racerandom()">Aléatoire</button><br>
+    <form class="myForm">
+      <label for="Race">Race</label><br>
+      <select name="Race" id="race">
+        <option value="Humain">Humain</option>
+        <option value="Elfe">Elfe</option>
+        <option value="Nain">Nain</option>
+        <option value="Halfelin">Halfelin</option>
+        <option value="DemiElfe">Demi-Elfe</option>
+        <option value="DemiOrque">Demi-Orque</option>
+        <option value="Gnome">Gnome</option>
+      </select><br><br>
+
+    </form>
+    <button onclick="yeuxrandom()">Aléatoire</button><br>
+    <form class="myForm">
+      <label for="Yeux">Yeux</label><br>
+      <input type="text" id="yeux" name="Yeux"><br><br>
+
+    </form>
+    <button onclick="cheveuxrandom()">Aléatoire</button><br>
+    <form class="myForm">
+      <label for="Cheveux">Cheveux</label><br>
+      <input type="text" id="cheveux" name="Cheveux"><br><br>
+
+    </form>
+    <button onclick="classerandom()">Aléatoire</button><br>
+    <form class="myForm">
+      <label for="Classe">Classe</label><br>
+      <select name="Classe" id="classe">
+        <option value="Barbare">Barbare</option>
+        <option value="Barde">Barde</option>
+        <option value="Druide">Druide</option>
+        <option value="Ensorceleur">Ensorceleur</option>
+        <option value="Guerrier">Guerrier</option>
+        <option value="Magicien">Magicien</option>
+        <option value="Moine">Moine</option>
+        <option value="Paladin">Paladin</option>
+        <option value="Pretre">Prêtre</option>
+        <option value="Rodeur">Rôdeur</option>
+        <option value="Roublard">Roublard</option>
+      </select><br>
+
+    </form>
+  </div>
+
+  <div class="premier">
+      <h3>Caractéristiques</h3>
+      <p>Lancé de dés <button onclick="de()">Dé</button></p>
+      <input class="de" type="number" readonly>
+      <input class="de" type="number" readonly>
+      <input class="de" type="number" readonly>
+      <input class="de" type="number" readonly>
+      <input class="de" type="number" readonly>
+      <input class="de" type="number" readonly><br><br>
+      <button onclick="caracrand()">Placer aléatoirement</button> <button onclick="reset()">Effacer</button><br><br>
+
+      <label for="Force">Force</label><br>
+      <input class="carac" type="number" name="Force"><br>
+      <label for="Dexterite">Dextérité</label><br>
+      <input class="carac" type="number" name="Dexterite"><br>
+      <label for="Constitution">Constitution</label><br>
+      <input class="carac" type="number" name="Constitution"><br>
+      <label for="Intelligence">Intelligence</label><br>
+      <input class="carac" type="number" name="Intelligence"><br>
+      <label for="Sagesse">Sagesse</label><br>
+      <input class="carac" type="number" name="Sagesse"><br>
+      <label for="Charisme">Charisme</label><br>
+      <input class="carac" type="number" name="Charisme"><br><br>
+  </div>
+  <button class="premier" onclick="suite()">Valider</button>
+
+  <div hidden class="deuxieme">
+    <label for="Alignement">Alignement</label><br>
+    <select name="Alignement">
+      <option class="L B nonneutre" value="LB">Loyal bon</option>
+      <option class="N B nonloyal" value="NB">Neutre bon</option>
+      <option class="C B nonneutre nonloyal" value="CB">Chaotique bon</option>
+      <option class="L N" value="LN">Loyal neutre</option>
+      <option class="N nonloyal" value="N">Neutre</option>
+      <option class="C N nonloyal" value="CN">Chaotique neutre</option>
+      <option class="L M nonneutre" value="LM">Loyal mauvais</option>
+      <option class="N M nonloyal" value="NM">Neutre mauvais</option>
+      <option class="C M nonneutre nonloyal" value="CM">Chaotique mauvais</option>
+    </select><br><br>
+    <button onclick="suite2()">Valider</button>
+  </div>
+
+  <div hidden class="troisieme" id="Dieu">
+    <form class="myForm">
+      <h3>Détails</h3>
+      <label for="Dieu">Dieu</label><br>
+      <select name="Dieu">
+        <option value="null">Pas de dieu</option>
+        <option hidden class="C B Elfe DemiElfe" value="CorellonLarethian">Corellon Larethian</option>
+        <option hidden class="N B Halfelin Gnome Elfe Rodeur DemiElfe" value="Ehlonna">Ehlonna</option>
+        <option hidden class="C M DemiOrque" value="Gruumsh">Gruumsh</option>
+        <option hidden class="N B Gnome" value="GarlBrilledor">Garl Brilledor</option>
+        <option hidden class="L B Nain" value="Moradin">Moradin</option>
+        <option hidden class="L B Halfelin" value="Yondalla">Yondalla</option>
+        <option hidden class="C B Pretre Guerrier Barbare" value="Kord">Kord</option>
+        <option hidden class="N Pretre Barbare Rodeur Druide" value="ObadHai">Obad-Haî</option>
+        <option hidden class="C M Pretre Guerrier Roublard Barbare" value="Erythnul">Erythnul</option>
+        <option hidden class="N B Pretre Barde" value="Pelor">Pélor</option>
+        <option hidden class="N Pretre Barde" value="Fharlanghn">Fharlanghn</option>
+        <option hidden class="C N Pretre Roublard Barde" value="Olidammara">Olidammara</option>
+        <option hidden class="L N Pretre Magicien Ensorceleur" value="WyDjaz">Wy-Djaz</option>
+        <option hidden class="N Pretre Magicien Ensorceleur" value="Boccob">Boccob</option>
+        <option hidden class="N M Pretre Magicien Roublard Ensorceleur" value="Vecna">Vecna</option>
+        <option hidden class="L B Pretre Moine Paladin Guerrier" value="Heroneus">Héronéus</option>
+        <option hidden class="L N Pretre Moine Guerrier" value="SaintCuthBert">Saint-Cuthbert</option>
+        <option hidden class="L M Pretre Moine Guerrier" value="Hextor">Hextor</option>
+        <option hidden class="N M Pretre Roublard" value="Nerull">Nérull</option>
+      </select><br><br>
+
+    </form>
+    <button onclick="agerandom()">Aléatoire</button><br>
+    <form class="myForm">
+      <label for="Age">Age</label><br>
+      <input type="number" id="age" min="0" name="Age"><br><br><br>
+
+    </form>
+    <button onclick="poidstaillerandom()">Aléatoire</button><br>
+    <form class="myForm">
+      <label for="Taille">Taille (cm)</label><br>
+      <input type="number" id="taille" min="0" name="Taille"><br>
+
+      <label for="Poids">Poids (kg)</label><br>
+      <input type="number" id="poids" min="0" name="Poids"><br><br>
+    </form>
+    <button onclick="suite3()">Valider</button><br>
+  </div>
+
+  <div hidden class="quatrieme">
+    <h3>Compétences</h3>
+    <p>Vous avez <span id="nbcompetence"></span> points de compétences à vous attribuer</p>
+
+    <label for="Acrobaties">Acrobaties </label><input name="Acrobaties" class="nbcompe Barde Moine" value="0" type="number" readonly>
+    <button class="Acrobaties" onclick="ajouterpts(this)">+</button><button class="Acrobaties" value="0" onclick="enleverpts(this)">-</button><br>
+
+    <label for="ArtDeLaMagie">Art de la magie </label><input name="ArtDeLaMagie" class="nbcompe Barde Druide Ensorceleur Magicien Pretre" value="0" type="number" readonly>
+    <button class="ArtDeLaMagie" onclick="ajouterpts(this)">+</button><button class="ArtDeLaMagie" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Artisanat">Artisanat </label><input name="Artisanat" class="nbcompe Barbare Barde Druide Ensorceleur Guerrier Magicien Moine Paladin Pretre Rodeur" value="0" type="number" readonly>
+    <button class="Artisanat" onclick="ajouterpts(this)">+</button><button class="Artisanat" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Bluff">Bluff </label><input name="Bluff" class="nbcompe Barde Ensorceleur" value="0" type="number" readonly>
+    <button class="Bluff" onclick="ajouterpts(this)">+</button><button class="Bluff" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Concentration">Concentration </label><input name="Concentration Barde Druide Ensorceleur Magicien Moine Paladin Pretre Rodeur" class="nbcompe" value="0" type="number" readonly>
+    <button class="Concentration" onclick="ajouterpts(this)">+</button><button class="Concentration" onclick="enleverpts(this)">-</button><br>
+
+    <label for="ConnaissanceArchitectureIngenierie">Connaissances architecture et ingénierie </label><input name="ConnaissanceArchitectureIngenierie" class="nbcompe Barde Magicien" value="0" type="number" readonly>
+    <button class="ConnaissanceArchitectureIngenierie" onclick="ajouterpts(this)">+</button><button class="ConnaissanceArchitectureIngenierie" onclick="enleverpts(this)">-</button><br>
+
+    <label for="ConnaissanceExplorationSouterraine">Connaissances exploration souterraine </label><input name="ConnaissanceExplorationSouterraine" class="nbcompe Barde Magicien Rodeur" value="0" type="number" readonly>
+    <button class="ConnaissanceExplorationSouterraine" onclick="ajouterpts(this)">+</button><button class="ConnaissanceExplorationSouterraine" onclick="enleverpts(this)">-</button><br>
+
+    <label for="ConnaissanceFolklore">Connaissances folklore local </label><input name="ConnaissanceFolklore" class="nbcompe Barde Magicien" value="0" type="number" readonly>
+    <button class="ConnaissanceFolklore" onclick="ajouterpts(this)">+</button><button class="ConnaissanceFolklore" onclick="enleverpts(this)">-</button><br>
+
+    <label for="ConnaissanceGeographie">Connaissances géographie </label><input name="ConnaissanceGeographie" class="nbcompe Barde Magicien Rodeur" value="0" type="number" readonly>
+    <button class="ConnaissanceGeographie" onclick="ajouterpts(this)">+</button><button class="ConnaissanceGeographie" onclick="enleverpts(this)">-</button><br>
+
+    <label for="ConnaissanceHistoire">Connaissances histoire </label><input name="ConnaissanceHistoire" class="nbcompe Barde Magicien Pretre" value="0" type="number" readonly>
+    <button class="ConnaissanceHistoire" onclick="ajouterpts(this)">+</button><button class="ConnaissanceHistoire" onclick="enleverpts(this)">-</button><br>
+
+    <label for="ConnaissanceMystere">Connaissances mystère </label><input name="ConnaissanceMystere" class="nbcompe Barde Ensorceleur Magicien Moine Pretre" value="0" type="number" readonly>
+    <button class="ConnaissanceMystere" onclick="ajouterpts(this)">+</button><button class="ConnaissanceMystere" onclick="enleverpts(this)">-</button><br>
+
+    <label for="ConnaissanceNature">Connaissances nature </label><input name="ConnaissanceNature" class="nbcompe Barde Druide Magicien Rodeur" value="0" type="number" readonly>
+    <button class="ConnaissanceNature" onclick="ajouterpts(this)">+</button><button class="ConnaissanceNature" onclick="enleverpts(this)">-</button><br>
+
+    <label for="ConnaissanceNoblesseRoyaute">Connaissances noblesse et royauté </label><input name="ConnaissanceNoblesseRoyaute" class="nbcompe Barde Magicien Paladin" value="0" type="number" readonly>
+    <button class="ConnaissanceNoblesseRoyaute" onclick="ajouterpts(this)">+</button><button class="ConnaissanceNoblesseRoyaute" onclick="enleverpts(this)">-</button><br>
+
+    <label for="ConnaissancePlans">Connaissances plans </label><input name="ConnaissancePlans" class="nbcompe Barde Magicien Pretre" value="0" type="number" readonly>
+    <button class="ConnaissancePlans" onclick="ajouterpts(this)">+</button><button class="ConnaissancePlans" onclick="enleverpts(this)">-</button><br>
+
+    <label for="ConnaissanceReligion">Connaissances religion </label><input name="ConnaissanceReligion" class="nbcompe Barde Magicien Moine Paladin Pretre" value="0" type="number" readonly>
+    <button class="ConnaissanceReligion" onclick="ajouterpts(this)">+</button><button class="ConnaissanceReligion" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Contrefacon">Contrefaçon </label><input name="Contrefacon" class="nbcompe" value="0" type="number" readonly>
+    <button class="Contrefacon" onclick="ajouterpts(this)">+</button><button class="Contrefacon" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Crochetage">Crochetage </label><input name="Crochetage" class="nbcompe" value="0" type="number" readonly>
+    <button class="Crochetage" onclick="ajouterpts(this)">+</button><button class="Crochetage" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Decryptage">Décryptage </label><input name="Decryptage" class="nbcompe Barde Magicien" value="0" type="number" readonly>
+    <button class="Decryptage" onclick="ajouterpts(this)">+</button><button class="Decryptage" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Deguisement">Déguisement </label><input name="Deguisement" class="nbcompe Barde" value="0" type="number" readonly>
+    <button class="Deguisement" onclick="ajouterpts(this)">+</button><button class="Deguisement" onclick="enleverpts(this)">-</button><br>
+
+    <label for="DeplacementSilencieux">Déplacement silencieux </label><input name="DeplacementSilencieux" class="nbcompe Barde" value="0" type="number" readonly>
+    <button class="DeplacementSilencieux" onclick="ajouterpts(this)">+</button><button class="DeplacementSilencieux" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Desamorcage">Désamorçage </label><input name="Desamorcage" class="nbcompe" value="0" type="number" readonly>
+    <button class="Desamorcage" onclick="ajouterpts(this)">+</button><button class="Desamorcage" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Detection">Détection </label><input name="Detection" class="nbcompe Druide" value="0" type="number" readonly>
+    <button class="Detection" onclick="ajouterpts(this)">+</button><button class="Detection" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Diplomatie">Diplomatie </label><input name="Diplomatie" class="nbcompe Barde Druide Paladin Pretre" value="0" type="number" readonly>
+    <button class="Diplomatie" onclick="ajouterpts(this)">+</button><button class="Diplomatie" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Discretion">Discrétion </label><input name="Discretion" class="nbcompe Barde Moine" value="0" type="number" readonly>
+    <button class="Discretion" onclick="ajouterpts(this)">+</button><button class="Discretion" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Dressage">Dressage </label><input name="Dressage" class="nbcompe Barbare Druide Guerrier Paladin" value="0" type="number" readonly>
+    <button class="Dressage" onclick="ajouterpts(this)">+</button><button class="Dressage" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Equilibre">Équilibre </label><input name="Equilibre" class="nbcompe Barde Moine" value="0" type="number" readonly>
+    <button class="Equilibre" onclick="ajouterpts(this)">+</button><button class="Equilibre" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Equitation">Équitation </label><input name="Equitation" class="nbcompe Barbare Druide Guerrier Paladin" value="0" type="number" readonly>
+    <button class="Equitation" onclick="ajouterpts(this)">+</button><button class="Equitation" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Escalade">Escalade </label><input name="Escalade" class="nbcompe Barbare Barde Guerrier Moine" value="0" type="number" readonly>
+    <button class="Escalade" onclick="ajouterpts(this)">+</button><button class="Escalade" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Escamotage">Escamotage </label><input name="Escamotage" class="nbcompe Barde" value="0" type="number" readonly>
+    <button class="Escamotage" onclick="ajouterpts(this)">+</button><button class="Escamotage" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Estimation">Estimation </label><input name="Estimation" class="nbcompe Barde" value="0" type="number" readonly>
+    <button class="Estimation" onclick="ajouterpts(this)">+</button><button class="Estimation" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Evasion">Évasion </label><input name="Evasion" class="nbcompe Barde Moine" value="0" type="number" readonly>
+    <button class="Evasion" onclick="ajouterpts(this)">+</button><button class="Evasion" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Fouille">Fouille </label><input name="Fouille" class="nbcompe" value="0" type="number" readonly>
+    <button class="Fouille" onclick="ajouterpts(this)">+</button><button class="Fouille" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Intimidation">Intimidation </label><input name="Intimidation" class="nbcompe Barbare Guerrier" value="0" type="number" readonly>
+    <button class="Intimidation" onclick="ajouterpts(this)">+</button><button class="Intimidation" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Langue">Langue </label><input name="Langue" class="nbcompe Barde" value="0" type="number" readonly>
+    <button class="Langue" onclick="ajouterpts(this)">+</button><button class="Langue" onclick="enleverpts(this)">-</button><br>
+
+    <label for="MaitriseCordes">Maîtrise des cordes </label><input name="MaitriseCordes" class="nbcompe" value="0" type="number" readonly>
+    <button class="MaitriseCordes" onclick="ajouterpts(this)">+</button><button class="MaitriseCordes" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Natation">Natation </label><input name="Natation" class="nbcompe Barbare Barde Druide Guerrier Moine" value="0" type="number" readonly>
+    <button class="Natation" onclick="ajouterpts(this)">+</button><button class="Natation" onclick="enleverpts(this)">-</button><br>
+
+    <label for="PerceptionAuditive">Perception auditive </label><input name="PerceptionAuditive Barde Druide Moine" class="nbcompe Barbare" value="0" type="number" readonly>
+    <button class="PerceptionAuditive" onclick="ajouterpts(this)">+</button><button class="PerceptionAuditive" onclick="enleverpts(this)">-</button><br>
+
+    <label for="PremiersSecours">Premiers secours </label><input name="PremiersSecours" class="nbcompe Druide Paladin Pretre" value="0" type="number" readonly>
+    <button class="PremiersSecours" onclick="ajouterpts(this)">+</button><button class="PremiersSecours" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Profession">Profession </label><input name="Profession" class="nbcompe Barde Druide Ensorceleur Magicien Moine Paladin Pretre" value="0" type="number" readonly>
+    <button class="Profession" onclick="ajouterpts(this)">+</button><button class="Profession" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Psychologie">Psychologie </label><input name="Psychologie" class="nbcompe Barde Moine Paladin" value="0" type="number" readonly>
+    <button class="Psychologie" onclick="ajouterpts(this)">+</button><button class="Psychologie" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Renseignements">Renseignements </label><input name="Renseignements" class="nbcompe Barde" value="0" type="number" readonly>
+    <button class="Renseignements" onclick="ajouterpts(this)">+</button><button class="Renseignements" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Representation">Représentation </label><input name="Representation" class="nbcompe Barde Moine" value="0" type="number" readonly>
+    <button class="Representation" onclick="ajouterpts(this)">+</button><button class="Representation" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Saut">Saut </label><input name="Saut" class="nbcompe Barbare Barde Guerrier Moine" value="0" type="number" readonly>
+    <button class="Saut" onclick="ajouterpts(this)">+</button><button class="Saut" onclick="enleverpts(this)">-</button><br>
+
+    <label for="Survie">Survie </label><input name="Survie" class="nbcompe Barbare Druide" value="0" type="number" readonly>
+    <button class="Survie" onclick="ajouterpts(this)">+</button><button class="Survie" onclick="enleverpts(this)">-</button><br>
+
+    <label for="UtilisationObjetsMagiques">Utilisation d'objets magiques </label><input name="UtilisationObjetsMagiques" class="nbcompe Barde" value="0" type="number" readonly>
+    <button class="UtilisationObjetsMagiques" onclick="ajouterpts(this)">+</button><button class="UtilisationObjetsMagiques" onclick="enleverpts(this)">-</button><br>
+
+  </div>
+
+  <a hidden class="quatrieme" onclick="enregistrercaracteristiques()" href="competences.html">Valider</a>
+
+  <script type="text/javascript" src="mesFonctions.js"></script>
+</body>
+
+</html>

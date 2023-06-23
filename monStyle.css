@@ -1,0 +1,12 @@
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.de{
+  width:20px;
+  text-align: center;
+}
+
+.nbcompe{
+  width:30px;
+}
